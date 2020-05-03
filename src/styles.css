@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+a { cursor: pointer }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+  }
+
+
+  body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.example-container {
+  height: 680px;
+  overflow: auto;
+}
+
+.mat-table-sticky {
+  border-top: 1px solid #e0e0e0;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

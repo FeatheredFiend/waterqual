@@ -1,0 +1,113 @@
+<div class="example-container">
+  <div class="example-table-container" *ngIf="dataSource">
+    <!-- PURE CSS LOADING ICON -->
+    <div class="loading-container"  >
+      <div class="lds-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- ANGULAR MATERIAL TABLE -->
+    <div>
+      <mat-form-field>Filter
+        <input matInput type="text" (keyup)="doFilter($event.target.value)">
+      </mat-form-field>
+    </div>
+    <mat-table class="example-table mat-elevation-z8" [dataSource]="dataSource" matSort>
+      <!-- Asset ID Column -->
+      <ng-container matColumnDef="assetid">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>#</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.assetid}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="assetcode">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Asset Code</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.assetcode}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="assettypename">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Asset Type</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.assettypename}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="outlettypename">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Outlet Type</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.outlettypename}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="manufacturername">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Manufacturer</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.manufacturername}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="serialnumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Serial Number</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.serialnumber}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="modelnumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Model Number</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.modelnumber}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="sentinel">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Sentinel</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.sentinel}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="healthcare">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Healthcare</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.healthcare}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="organisationname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Organisation</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.organisationname}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="buildingname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Building</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.buildingname}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="departmentname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Department</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.departmentname}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="floorname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Floor</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.floorname}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="assetlocationdetails">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.assetlocationdetails}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="assetroomdetails">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Room</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.assetroomdetails}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="assetcomment">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Asset Comment</mat-header-cell>
+        <mat-cell *matCellDef="let asset">{{asset.assetcomment}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[ 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

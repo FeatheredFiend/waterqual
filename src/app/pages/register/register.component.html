@@ -1,0 +1,73 @@
+<h2 class="text-center">Registration</h2>
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <form [formGroup]="angForm" (ngSubmit)="postData(angForm)" autocomplete="off">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" formControlName="username" autocomplete="off"
+                        class="form-control input-sm" placeholder="Username" >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" formControlName="email" autocomplete="off"
+                        class="form-control input-sm" placeholder="Email" >
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" formControlName="password" autocomplete="off"
+                        class="form-control input-sm" placeholder="Password" >
+                </div>
+                <div class="form-group">
+                    <label for="passwordconfirm">Password Confirm</label>
+                    <input type="password" name="passwordconfirm" formControlName="passwordconfirm"
+                        autocomplete="off" class="form-control input-sm" placeholder="Password Confirm" >
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select name="text" formControlName="role" class="form-control select-sm" >
+                        <option disabled></option>
+                        <option *ngFor="let role of dataRole[0]">{{role.rolename}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="jobtitle">Job Title</label>
+                    <input type="text" name="jobtitle" formControlName="jobtitle" autocomplete="off"
+                        class="form-control input-sm" placeholder="Job Title" >
+                </div>
+                <div class="form-group">
+                    <label for="organisation">Organisation</label>
+                    <select name="organisation" formControlName="organisation" class="form-control select-sm" >
+                        <option disabled></option>
+                        <option *ngFor="let organisation of dataOrganisation[0]">{{organisation.organisationname}}
+                        </option>
+                    </select>
+                </div>
+                <!-- Logged In -->
+                <div class="row" *ngIf="currentUser">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <button type="submit" class="btn btn-success btn-block">Register User</button>
+                    </div>
+                </div>
+                <!-- Not Logged In -->
+                <div class="row" *ngIf="!currentUser">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <button type="submit" class="btn btn-success btn-block">Register User and Login</button>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <a class="" routerLink="/login"><input type="button" class="btn btn-warning btn-block"
+                                value="Back to Login"></a>
+                    </div>
+                </div>
+            </form>
+            <div class="text-center">
+                <br>
+                <h3 class="warning">{{warning}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>

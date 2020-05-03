@@ -1,0 +1,53 @@
+<h2 class="text-center">User Profile</h2>
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <form [formGroup]="angForm" autocomplete="off">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" formControlName="username" autocomplete="off"
+                        class="form-control input-sm" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" formControlName="email" autocomplete="off"
+                        class="form-control input-sm" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" formControlName="password" autocomplete="off"
+                        class="form-control input-sm" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select name="role" formControlName="role" class="form-control select-sm">
+                        <option *ngFor="let role of dataRole[0]">{{role.rolename}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="jobtitle">Job Title</label>
+                    <input type="jobtitle" name="jobtitle" formControlName="jobtitle" autocomplete="off"
+                        class="form-control input-sm" placeholder="Job Title">
+                </div>
+                <div class="form-group">
+                    <label for="organisation">Organisation</label>
+                    <select name="organisation" formControlName="organisation" class="form-control select-sm">
+                        <option *ngFor="let organisation of dataOrganisation[0]">{{organisation.organisationname}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="decommission">Decommission</label>
+                    <select name="decommission" formControlName="decommission" class="form-control select-sm">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Update user</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>

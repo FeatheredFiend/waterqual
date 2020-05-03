@@ -1,0 +1,120 @@
+<h2 class="text-center">Edit Asset</h2>
+<div class="row">
+    <div class="container">
+        <div class="jumbotron">
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                <mat-tab-group animationDuration="0ms">
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Asset Type <br>Information
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="assetcode">Asset Code</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="assettype">Asset Type</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="outlettype">Outlet Type</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Manufacturer <br>Information
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="manufacturer">Manufacturer</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="serialnumber">Serial Number</label>
+                            <input type="serialnumber" name="serialnumber" formControlName="serialnumber"
+                                autocomplete="off" class="form-control input-sm" placeholder="Serial Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="modelnumber">Model Number</label>
+                            <input type="modelnumber" name="modelnumber" formControlName="modelnumber"
+                                autocomplete="off" class="form-control input-sm" placeholder="Model Number">
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Sentinel and<br>Healthcare
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="sentinel">Sentinel</label>
+                            <select name="sentinel" formControlName="sentinel" class="form-control select-sm">
+                                <option disabled></option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="healthcare">Healthcare</label>
+                            <select name="healthcare" formControlName="healthcare" class="form-control select-sm">
+                                <option disabled></option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Location<br>Information
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="organisation">Organisation</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="building">Building</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="floor">Floor</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="location" name="location" formControlName="location" autocomplete="off"
+                                class="form-control input-sm" placeholder="Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="room">Room</label>
+                            <input type="room" name="room" formControlName="room" autocomplete="off"
+                                class="form-control input-sm" placeholder="Room">
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Comment and<br>Submit
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="comment">Comment</label>
+                            <input type="comment" name="comment" formControlName="comment" autocomplete="off"
+                                class="form-control input-sm" placeholder="Comment">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Register</button>
+                    </mat-tab>
+                </mat-tab-group>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>

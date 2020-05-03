@@ -1,0 +1,142 @@
+<h2 class="text-center">Add Asset</h2>
+<div class="row">
+    <div class="container">
+        <div class="jumbotron">
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                <mat-tab-group animationDuration="0ms" >
+                    <mat-tab>
+                            <ng-template mat-tab-label>
+                                <div id="assettypeinformation">
+                                Asset Type <br>Information
+                            </div>
+                            </ng-template>
+                            <!-- onChangeTabAssetCode($event.target.value) -->
+                        <div class="form-group" ng-controller="colourChange">
+                            <label for="assetcode">Asset Code</label>
+                            <input type="text" name="assetcode" formControlName="assetcode" autocomplete="off"
+                                class="form-control input-sm" placeholder="Asset Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="assettype">Asset Type</label>
+                            <select name="assettype" formControlName="assettype" class="form-control select-sm" (change)="onSelectAssetType($event.target.value)">
+                                <option disabled></option>
+                                <option *ngFor="let assettype of dataAssetType[0]">{{assettype.assettypename}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="outlettype">Outlet Type</label>
+                            <select name="outlettype" formControlName="outlettype" class="form-control select-sm">
+                                <option disabled></option>
+                                <option *ngFor="let outlettype of dataOutletType[0]">{{outlettype.outlettypename}}
+                                </option>
+                            </select>
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Manufacturer <br>Information
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="manufacturer">Manufacturer</label>
+                            <select name="manufacturer" formControlName="manufacturer" class="form-control select-sm">
+                                <option disabled></option>
+                                <option *ngFor="let manufacturer of dataManufacturer[0]">
+                                    {{manufacturer.manufacturername}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="serialnumber">Serial Number</label>
+                            <input type="serialnumber" name="serialnumber" formControlName="serialnumber"
+                                autocomplete="off" class="form-control input-sm" placeholder="Serial Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="modelnumber">Model Number</label>
+                            <input type="modelnumber" name="modelnumber" formControlName="modelnumber"
+                                autocomplete="off" class="form-control input-sm" placeholder="Model Number">
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Sentinel and<br>Healthcare
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="sentinel">Sentinel</label>
+                            <select name="sentinel" formControlName="sentinel" class="form-control select-sm">
+                                <option disabled></option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="healthcare">Healthcare</label>
+                            <select name="healthcare" formControlName="healthcare" class="form-control select-sm">
+                                <option disabled></option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Location<br>Information
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="organisation">Organisation</label>
+                            <select name="organisation" formControlName="organisation" class="form-control select-sm">
+                                <option disabled></option>
+                                <option *ngFor="let organisation of dataOrganisation[0]">
+                                    {{organisation.organisationname}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="building">Building</label>
+                            <select name="building" formControlName="building" class="form-control select-sm"
+                                (change)="onSelectBuilding($event.target.value)">
+                                <option disabled></option>
+                                <option *ngFor="let building of dataBuilding[0]">{{building.buildingname}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select name="department" formControlName="department" class="form-control select-sm">
+                                <option disabled></option>
+                                <option *ngFor="let department of dataDepartment[0]">{{department.departmentname}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="floor">Floor</label>
+                            <select name="floor" formControlName="floor" class="form-control select-sm">
+                                <option disabled></option>
+                                <option *ngFor="let floor of dataFloor[0]">{{floor.floorname}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="location" name="location" formControlName="location" autocomplete="off"
+                                class="form-control input-sm" placeholder="Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="room">Room</label>
+                            <input type="room" name="room" formControlName="room" autocomplete="off"
+                                class="form-control input-sm" placeholder="Room">
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Comment and<br>Submit
+                        </ng-template>
+                        <div class="form-group">
+                            <label for="comment">Comment</label>
+                            <input type="comment" name="comment" formControlName="comment" autocomplete="off"
+                                class="form-control input-sm" placeholder="Comment">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Register</button>
+                    </mat-tab>
+                </mat-tab-group>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
